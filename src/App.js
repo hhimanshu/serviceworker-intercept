@@ -3,21 +3,17 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const getUserData = () => {
+    console.log("fetching data")
+    fetch('https://api.github.com/users/hhimanshu')
+    .then(res => res.json())
+    .then(user => console.table(user))
+  }
+  
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <button onClick={getUserData}>Fetch</button>
       </header>
     </div>
   );
