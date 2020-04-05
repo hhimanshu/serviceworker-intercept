@@ -12,7 +12,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && yarn updateServiceWorker",
+    "updateServiceWorker": "cat src/updated-service-worker.js >> build/service-worker.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
